@@ -36,6 +36,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
+    - name: 验货 (Check Hardware)
+      run: |
+        echo "====== CPU 信息 ======"
+        lscpu | grep "Model name"
+        echo "====== 内存信息 ======"
+        free -h
+        echo "====== 硬盘信息 ======"
+        df -h
+
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive

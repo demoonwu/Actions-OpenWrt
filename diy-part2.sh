@@ -19,3 +19,6 @@ sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_genera
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+# 修复 Xray-core 编译失败：删除 PassWall 自带的激进版本，回退使用 OpenWrt 官方版本
+rm -rf feeds/passwall_packages/xray-core
+
